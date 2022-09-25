@@ -199,20 +199,23 @@ String.prototype.replaceAll = function (find, replace)
 
 async function run()
 {
-    let isDependencies = await utils.isDependencies(github);
-    if (isDependencies) {
-        console.log(`Pull request contain "dependencies" label. Step skipped.`);
-        return;
-    }
-
-    let latestRelease = await utils.getLatestRelease(process.env.GITHUB_REPOSITORY);
     let commitMessages = "";
-    if (latestRelease != null)
-    {
-        commitMessages = await getCommitMessages(latestRelease.published_at);
-        commitMessages = cleanMessages(commitMessages);
-    }
+    try {
+        let isDependencies = await utils.isDependencies(github);
+        if (isDependencies) {
+            console.log(`Pull request contain "dependencies" label. Step skipped.`);
+            return;
+        }
 
+        let latestRelease = await utils.getLatestRelease(process.env.GITHUB_REPOSITORY);
+        if (latestRelease != null)
+        {
+            commitMessages = await getCommitMessages(latestRelease.published_at);
+            commitMessages = cleanMessages(commitMessages);
+        }
+    } catch (error) {
+        core.setFailed(error.message);
+    }
     console.log(commitMessages);
     core.setOutput("changelog", commitMessages);
 }
