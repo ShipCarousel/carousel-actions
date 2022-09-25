@@ -1,5 +1,5 @@
 {
-  "name": "setup-git-credentials-github",
+  "name": "changelog-generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "carousel",
+  "author": "Carousel",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.2.4",
     "@actions/exec": "^1.0.4",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "@shipcarousel/carousel-actions-lib": "^1.1.1"
   }
 }

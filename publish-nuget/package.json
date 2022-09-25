@@ -1,5 +1,5 @@
 {
-  "name": "setup-git-credentials-github",
+  "name": "publish-nuget",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,11 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "carousel",
-  "license": "ISC",
+  "author": "Carousel",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/exec": "^1.0.4",
-    "@actions/github": "^4.0.0"
+    "@actions/core": "^1.7.0",
+    "@actions/exec": "^1.1.1"
   }
 }
