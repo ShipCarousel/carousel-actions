@@ -1,0 +1,5 @@
+name: 'setup-build'
+description: 'Setups build'
+runs:
+  using: 'node12'
+  main: 'index.js'
