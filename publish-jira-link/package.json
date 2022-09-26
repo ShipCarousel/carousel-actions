@@ -1,0 +1,20 @@
+{
+  "name": "@shipcarousel/publish-jira-link",
+  "version": "1.0.0",
+  "description": "Publish link on the Jira task in PR description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Carousel",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.10"
+  }
+}
