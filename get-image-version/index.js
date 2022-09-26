@@ -4,10 +4,8 @@ const github = require('@actions/github');
 const utils = require('@shipcarousel/carousel-actions-lib');
 const defaultPath = '.';
 const validProjectTypes = [
-    utils.projectTypeTheme,
     utils.projectTypeModule,
-    utils.projectTypePlatform,
-    utils.projectTypeStorefront
+    utils.projectTypePlatform
 ];
 
 function pushOutputs(branchName, prefix, suffix, moduleId, moduleDescription="", projectUrl="", iconUrl="") {
@@ -98,10 +96,6 @@ async function run()
     let  iconUrl = "";
     console.log(`Project Type: ${projectType}`);
     switch(projectType) {
-        case utils.projectTypeTheme:
-            versionInfo = await utils.getInfoFromPackageJson(`${path}/package.json`);
-            prefix = versionInfo.version;
-            break;
         case utils.projectTypeModule:
             let manifestPathTemplate = "src/*/module.manifest";
             if (path !== defaultPath) {
@@ -125,7 +119,6 @@ async function run()
             }
             break;
         case utils.projectTypePlatform:
-        case utils.projectTypeStorefront:
             versionInfo = await utils.getInfoFromDirectoryBuildProps(`${path}/Directory.Build.props`);
             prefix = versionInfo.prefix;
             suffix = versionInfo.suffix;
