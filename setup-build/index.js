@@ -3,7 +3,7 @@ const exec = require('@actions/exec');
 
 async function run()
 {
-    await exec.exec("dotnet tool install --global Carousel.GlobalTool --version 1.1.1");
+    await exec.exec("dotnet tool install --global Carousel.GlobalTool --version 1.1.3");
     core.addPath('/home/runner/.dotnet/tools/');
 }
 
