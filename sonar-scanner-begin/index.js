@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const exec = require('@actions/exec');
-const utils = require('@ShipCarousel/carousel-actions-lib');
+const utils = require('@shipcarousel/carousel-actions-lib');
 
 async function run()
 {
